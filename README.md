@@ -101,7 +101,7 @@ certification python project from <a href="https://www.freecodecamp.org/learn/da
 8. create a draw_box_plot function that uses Seaborn to draw two adjacent box plots. These box plots should show how the values are distributed within a given year or month and how it compares over time. The title of the first chart should be Year-wise Box Plot (Trend) and the title of the second chart should be Month-wise Box Plot (Seasonality). Make sure the month labels on bottom start at Jan and the x and y axis are labeled correctly
 
     <details>
-    <summary>draw_blox_plot</summary>
+    <summary>draw_box_plot</summary>
     <pre>
     def draw_box_plot():
         df_box = df.copy(deep=True)
@@ -111,7 +111,7 @@ certification python project from <a href="https://www.freecodecamp.org/learn/da
         df_box["month_angka"] = [d.strftime("%m") for d in df_box["date"]]
         
     </br>
-    -draw box plots (using Seaborn)
+    - draw box plots (using Seaborn)
     fig, ax = plt.subplots(nrows=1, ncols=2, figsize=(15,6))
     p = sns.boxplot(data = df_box, 
                 x = "year", 
@@ -128,7 +128,7 @@ certification python project from <a href="https://www.freecodecamp.org/learn/da
     q.set_ylabel("Page Views")
     
     </br>
-    -save image and return fig
+    - save image and return fig
     fig.savefig('box_plot.png')
     return fig
     </pre>
