@@ -43,13 +43,15 @@ certification python project from <a href="https://www.freecodecamp.org/learn/da
     <summary>draw_line_plot</summary>
     <pre>
     def draw_line_plot():
-    # Draw line plot
-    fig, ax = plt.subplots(figsize=(12,6))
-    ax.plot(df.index, df["value"], color="red", linewidth=1)
-    ax.set_xlabel("Date")
-    ax.set_ylabel("Page Views")
-    ax.set_title("Daily freeCodeCamp Forum Page Views 5/2016-12/2019")</br>
-    # Save image and return fig
+        - draw line plot
+        fig, ax = plt.subplots(figsize=(12,6))
+        ax.plot(df.index, df["value"], color="red", linewidth=1)
+        ax.set_xlabel("Date")
+        ax.set_ylabel("Page Views")
+        ax.set_title("Daily freeCodeCamp Forum Page Views 5/2016-12/2019")
+    
+    </br>       
+    - save image and return fig
     fig.savefig('line_plot.png')
     return fig
     </pre>
@@ -66,13 +68,14 @@ certification python project from <a href="https://www.freecodecamp.org/learn/da
     <summary>draw_bar_plot</summary>
     <pre>
     def draw_bar_plot():
-        # Copy and modify data for monthly bar plot
+        - copy and modify data for monthly bar plot
         df_bar = df.copy(deep=True)
         df_bar["Months"] = df_bar.index.month
         df_bar["tahun"] = df_bar.index.year
         df_bar["bulan_angka"] = df_bar.index.month
         df_bar = pd.DataFrame(df_bar.groupby(["tahun", "Months", "bulan_angka"])["value"].mean())
         df_bar.reset_index(inplace=True)</br>                
+    
     - draw bar plot              
     fig, ax = plt.subplots(figsize = (14,10))
     ax = sns.barplot(data = df_bar, 
